@@ -1,0 +1,113 @@
+======================================================================
+INSURANCE MULTI-GOAL ORCHESTRATOR - LAYA POC
+======================================================================
+
+Loading Laya...
+Laya loaded successfully!
+
+Analyzing customer request...
+
+======================================================================
+RAW LAYA RESULT
+======================================================================
+
+{
+  "answers": {
+    "needs_claim": {
+      "noul": 0.9842
+    },
+    "needs_rental": {
+      "noul": 0.9678
+    },
+    "needs_roadside": {
+      "noul": 0.0821
+    },
+    "needs_billing": {
+      "noul": 0.0417
+    },
+    "needs_policy": {
+      "noul": 0.0635
+    },
+    "needs_id_card": {
+      "noul": 0.0284
+    }
+  }
+}
+
+======================================================================
+GOAL DETECTION
+======================================================================
+
+CLAIM        -> YES (98.42%)
+RENTAL       -> YES (96.78%)
+ROADSIDE     -> NO  (8.21%)
+BILLING      -> NO  (4.17%)
+POLICY       -> NO  (6.35%)
+ID_CARD      -> NO  (2.84%)
+
+======================================================================
+DETECTED GOALS
+======================================================================
+
+1. CLAIM | confidence=98.42% | agent=ClaimsAgent
+2. RENTAL | confidence=96.78% | agent=RentalAgent
+
+
+######################################################################
+STARTING MULTI-GOAL EXECUTION
+######################################################################
+
+Current goal: CLAIM
+
+======================================================================
+EXECUTING GOAL #1: CLAIM
+======================================================================
+
+Agent       : ClaimsAgent
+Confidence  : 98.42%
+
+----------------------------------------
+CLAIMS AGENT
+----------------------------------------
+Claims Agent received customer request.
+
+✓ CLAIM completed
+
+Current goal: RENTAL
+
+======================================================================
+EXECUTING GOAL #2: RENTAL
+======================================================================
+
+Agent       : RentalAgent
+Confidence  : 96.78%
+
+----------------------------------------
+RENTAL AGENT
+----------------------------------------
+Rental Agent received customer request.
+
+✓ RENTAL completed
+
+
+######################################################################
+FINAL ORCHESTRATOR STATE
+######################################################################
+
+Customer:
+I had an accident and need to file a claim. I also need a rental car
+because my vehicle cannot be driven.
+
+Detected goals:
+  1. claim (98.42%)
+  2. rental (96.78%)
+
+Completed goals:
+  ✓ claim
+  ✓ rental
+
+Failed goals:
+
+======================================================================
+POC COMPLETE
+======================================================================
